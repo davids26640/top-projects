@@ -1,0 +1,83 @@
+.header {
+display: flex;
+justify-content: space-between;
+background-color: #0b44a0;
+}
+
+.smalllogo { 
+    width: 50px;;
+    height: 50px;;
+}
+
+.right-links a { 
+    text-decoration: none;
+    color: rgb(1, 33, 84);
+    font-weight: bold;
+    
+}
+
+div .ladder { 
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0b44a0; 
+    color: white;
+    text-decoration: none;    
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.services { padding: 40px 24px; text-align: center; }
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;          
+    justify-content: center;
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.service-card {
+    flex: 1 1 220px;          
+    max-width: 255px;         
+}
+
+.service-card img { width: 100%; height: auto; border-radius: 8px; }
+.service-card h3 { color: #0a2a5e; margin-top: 12px; }
+.main-content { 
+    background-color: #0b44a0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+.flexquote { 
+    display: flex;
+    color: #1f2937;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100px;
+    background-color: #E5E7Eb;
+    Font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.headerlogo { 
+    height: 100px;
+    display: flex;
+    align-self: center;
+}
+
+footer { 
+    display: flex;
+    background-color: #0b44a0;
+    height: 75px;
+    justify-content: center;
+    align-items: center;
+}

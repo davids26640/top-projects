@@ -1,12 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>TroubleShoot Diagram</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Furnace &amp; A/C Troubleshooter</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF2F2;--card:#FFFFFF;--ink:#13313A;--mute:#52686E;--rail:#9DB3B8;--accent:#E0922B;--accent-ink:#2A1A02;--ok:#1E7A5A;--stop:#B3261E;--line:#D3DEE0;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1D21;--card:#17292E;--ink:#E7F0F1;--mute:#9FB4B9;--rail:#4A6269;--accent:#F0A94A;--accent-ink:#2A1A02;--ok:#4CC49A;--stop:#FF8A80;--line:#2B4249}}
+:root[data-theme="dark"]{--bg:#0F1D21;--card:#17292E;--ink:#E7F0F1;--mute:#9FB4B9;--rail:#4A6269;--accent:#F0A94A;--accent-ink:#2A1A02;--ok:#4CC49A;--stop:#FF8A80;--line:#2B4249}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.5 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1,h2{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.15;margin:0}
+h1{font-size:clamp(26px,6vw,36px);font-weight:700}
+.sub{color:var(--mute);margin:8px 0 20px;max-width:56ch}
+.layout{display:grid;grid-template-columns:1fr;gap:20px}
+@media(min-width:640px){.layout{grid-template-columns:200px 1fr}}
+/* ladder */
+.ladder{position:relative;padding:4px 0}
+.ladder-inner{position:relative;margin-left:8px;padding-left:0}
+.ladder ol{list-style:none;margin:0;padding:0;position:relative;width:100%;border-left:5px solid var(--rail);border-right:5px solid var(--rail);border-radius:3px}
+.rung{position:relative;padding:10px 12px 8px;font-size:14px;color:var(--mute);border-top:5px solid var(--rail);min-height:44px}
+.rung:first-child{border-top-color:transparent}
+.rung.done{border-top-color:var(--accent);color:var(--ink)}
+.rung.now{border-top-color:var(--accent);color:var(--ink);font-weight:600}
+.rung.now::after{content:"";position:absolute;right:-5px;top:-5px;width:15px;height:15px;border-radius:50%;background:var(--accent)}
+@media(max-width:639px){.ladder ol{display:flex;border:0;overflow-x:auto;gap:0;border-radius:0}.rung{flex:0 0 auto;max-width:150px;border-top:5px solid var(--rail);border-left:0}.rung.done,.rung.now{border-top-color:var(--accent)}.rung:first-child{border-top-color:var(--accent)}}
+/* card */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px}
+.card h2{font-size:clamp(22px,5vw,28px);margin-bottom:10px}
+.help{color:var(--mute);margin:0 0 18px;max-width:60ch}
+.opts{display:grid;gap:10px}
+.opt{font:600 17px/1.3 Figtree,system-ui,sans-serif;text-align:left;padding:15px 16px;border-radius:10px;border:2px solid var(--line);background:transparent;color:var(--ink);cursor:pointer;min-height:52px}
+.opt:hover{border-color:var(--accent)}
+.opt:focus-visible,.btn:focus-visible,.link:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.nav{display:flex;gap:16px;margin-top:18px;flex-wrap:wrap}
+.link{background:none;border:0;color:var(--mute);font:600 15px Figtree,system-ui,sans-serif;text-decoration:underline;cursor:pointer;padding:8px 0}
+.tag{display:inline-block;font-weight:600;font-size:14px;padding:4px 10px;border-radius:99px;margin-bottom:12px}
+.t-ok{background:var(--ok);color:#fff}.t-call{background:var(--accent);color:var(--accent-ink)}.t-stop{background:var(--stop);color:#fff}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .t-ok,:root:not([data-theme="light"]) .t-stop{color:#0B1417}}
+.btn{display:inline-block;font:700 18px Figtree,system-ui,sans-serif;padding:15px 22px;border-radius:10px;background:var(--accent);color:var(--accent-ink);text-decoration:none;margin-top:6px}
+.btn.stop{background:var(--stop);color:#fff}
+.card.r-stop{border:2px solid var(--stop)}
+.small{font-size:14px;color:var(--mute);margin-top:22px;max-width:62ch}
+</style>
 </head>
 <body>
-    <h1>Coming soon</h1>
-    <a href="index.html">Back to HomePage</a>
+<div class="wrap">
+  <h1>Try these checks before you call</h1>
+  <p class="sub">Answer a few quick questions. Most no-heat and no-cool calls come down to simple fixes you can do yourself in about 10 minutes.</p>
+  <div class="layout">
+    <nav class="ladder" aria-label="Your progress"><div class="ladder-inner"><ol id="rungs"></ol></div></nav>
+    <main><div class="card" id="card" aria-live="polite"></div>
+    <p class="small">Never open the burner compartment, touch wiring, or work on gas lines. If a step feels unsafe, skip it and call us.</p></main>
+  </div>
+</div>
+<script>
+// ===== EDIT THESE =====
+var BUSINESS = "Dave's Heating & Cooling";
+var PHONE = "248-667-2096";
+// ======================
+var tel = "tel:" + PHONE.replace(/[^0-9+]/g, "");
+var N = {
+start:{r:"System",q:"What do you need help with?",o:[["My furnace (no heat or weak heat)","f1"],["My air conditioner (no cooling or weak cooling)","a1"]]},
+
+f1:{r:"Safety check",q:"Do you smell gas or rotten eggs, or is a carbon monoxide alarm going off?",h:"Answer honestly. This one matters more than comfort.",o:[["Yes","S_gas"],["No","f2"]]},
+f2:{r:"Thermostat",q:"Is the thermostat screen on?",o:[["Yes, it’s on","f3"],["No, it’s blank","f2b"]]},
+f2b:{r:"Batteries",q:"Replace the thermostat batteries. Did the screen come back on?",h:"Open the front or pull the thermostat off its wall plate to find them.",o:[["Yes","f3"],["No, still blank","f2c"]]},
+f2c:{r:"Power",q:"Check the furnace breaker in your panel and the switch on or near the furnace (it looks like a light switch). Flip it on if it’s off. Did the furnace start?",o:[["Yes, it’s working","D_ok"],["No, or the breaker keeps tripping","C_power"]]},
+f3:{r:"Settings",q:"Set the thermostat to HEAT and the temperature 5 degrees above the room. Does the furnace start within a few minutes?",h:"You may hear a fan or a click first. Give it 3 to 5 minutes.",o:[["Yes, it’s working","D_ok"],["No","f4"]]},
+f4:{r:"Filter",q:"Pull out the air filter. Is it gray, clogged, or hasn’t been changed in 3 months?",h:"A clogged filter can trigger a safety shutoff. Replace it, then wait 10 minutes.",o:[["Yes, I replaced it and it’s working","D_ok"],["Replaced it, still no heat","f5"],["It was clean","f5"]]},
+f5:{r:"Symptoms",q:"What best describes what the furnace is doing?",o:[["Nothing at all, no sounds","f6"],["Fan runs but air is cold or lukewarm","f7"],["Starts, then shuts off within a minute or two","C_cycle"],["Water is pooling around the furnace","f8"]]},
+f6:{r:"Panel & valve",q:"Make sure the front panel is seated tightly, since a safety switch cuts power if it’s loose. Also check that the gas valve handle runs parallel to the pipe. Did it start?",o:[["Yes","D_ok"],["No","C_nofire"]]},
+f7:{r:"Pilot / ignition",q:"Is the furnace trying to light (clicking, glowing, or a whoosh) but not staying lit?",o:[["Yes","C_nofire"],["No, it never tries","C_nofire"]]},
+f8:{r:"Drain",q:"High-efficiency furnaces drain water through a white PVC pipe. Is that pipe or its small trap visibly clogged or full?",h:"Turn the furnace off at the switch first. Clear only what you can reach safely.",o:[["I cleared it and it’s draining","D_ok"],["Can’t find it or it keeps coming back","C_drain"]]},
+
+a1:{r:"Safety check",q:"Do you smell burning, see sparks or smoke, or see water near electrical equipment?",o:[["Yes","S_elec"],["No","a2"]]},
+a2:{r:"Thermostat",q:"Set the thermostat to COOL and 5 degrees below the room. Is the screen on, and does the system start within 5 minutes?",h:"If the screen is blank, replace the batteries first.",o:[["Yes, it’s cooling","D_ok"],["No","a3"]]},
+a3:{r:"Breakers",q:"Check the breaker in your panel and the outdoor disconnect box near the outside unit. Is anything tripped or off?",h:"Reset a tripped breaker once. If it trips again, leave it off.",o:[["I reset it and it works","D_ok"],["It trips again","C_power"],["Nothing was tripped","a4"]]},
+a4:{r:"Filter",q:"Pull out the air filter. Is it dirty or clogged?",h:"Replace it, then wait 15 minutes.",o:[["Replaced it and it’s cooling","D_ok"],["Replaced it, no change","a5"],["It was clean","a5"]]},
+a5:{r:"Symptoms",q:"What best describes the problem?",o:[["Outdoor unit isn’t running or the fan isn’t spinning","C_outdoor"],["Air blows but it’s warm","a6"],["Water is leaking inside","a7"],["It runs nonstop but doesn’t cool enough","a8"]]},
+a6:{r:"Ice check",q:"Look at the copper pipe going into the indoor unit, or the indoor coil. Is there ice or frost?",o:[["Yes, there’s ice","D_ice"],["No ice","a8"]]},
+a7:{r:"Condensate",q:"Turn the AC off. Is the drain pan under the indoor unit full, or the drain line clogged?",h:"A wet-vac on the drain line outlet often clears it. Pouring a cup of vinegar into the access port helps keep it clear.",o:[["I cleared it, no more leaks","D_ok"],["Still leaking or can’t find it","C_drain"]]},
+a8:{r:"Outdoor unit",q:"Is the outdoor unit blocked by leaves, grass, or debris? Turn it off, gently rinse the fins with a garden hose, and keep 2 feet clear around it. Did cooling improve after an hour?",o:[["Yes","D_ok"],["No","C_cool"]]},
+
+D_ok:{res:"ok",title:"Nice, that likely fixed it",t:"Keep an eye on it for the next day. If the problem comes back, it’s a sign something deeper is going on, and we’re happy to take a look. Changing your filter every 1 to 3 months prevents most of these calls."},
+D_ice:{res:"fix",title:"Let the ice melt, then retest",t:"Turn the AC off at the thermostat and set the fan to ON for 2 to 4 hours until the ice melts. Make sure the filter is clean and all vents are open. Then restart cooling. If ice comes back, you likely have low refrigerant or an airflow problem and need a technician."},
+C_power:{res:"call",title:"This needs a technician",t:"A breaker that won’t stay on, or a unit with no power after these checks, usually points to a failed motor, capacitor, or wiring fault. Leave the breaker off and give us a call."},
+C_cycle:{res:"call",title:"Likely a sensor or overheating issue",t:"Shutting off after a minute or two is commonly a dirty flame sensor or a limit switch tripping from poor airflow. Both are quick repairs for us, but not DIY jobs."},
+C_nofire:{res:"call",title:"Ignition or gas valve issue",t:"The furnace isn’t lighting or staying lit. That could be an igniter, flame sensor, or gas valve. These need a technician. Please don’t open the burner compartment."},
+C_drain:{res:"call",title:"Drain problem to fix soon",t:"Turn the system off to prevent water damage and call us. A recurring clog or leak can damage floors and shut down your system."},
+C_outdoor:{res:"call",title:"Likely a failed capacitor or contactor",t:"If the outdoor unit won’t run after the power checks, the usual cause is a bad capacitor, contactor, or fan motor. Keep the AC off and call us."},
+C_cool:{res:"call",title:"Possible refrigerant or compressor issue",t:"If airflow and cleaning didn’t help, the system may be low on refrigerant or have a failing compressor. Both need a licensed technician."},
+S_gas:{res:"stop",title:"Leave the house now",t:"Don’t use switches, phones, or flames inside. Go outside, then call 911 and your gas utility from a safe distance. Once the all-clear is given, call us and we’ll inspect the system.",nophone:1},
+S_elec:{res:"stop",title:"Shut the system off and stay clear",t:"Turn the system off at the thermostat and, if it’s safe to reach, at the breaker. If you see smoke or fire, leave and call 911. Then call us to inspect before turning it back on.",nophone:1}
+};
+var path = ["start"], el = document.getElementById("card"), rungs = document.getElementById("rungs");
+function esc(s){return String(s).replace(/[&<>]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function render(){
+  var id = path[path.length-1], n = N[id], h = "";
+  rungs.innerHTML = path.map(function(p,i){
+    var cls = i === path.length-1 ? "now" : "done";
+    var label = N[p].r || (N[p].res === "ok" ? "Fixed" : N[p].res === "fix" ? "Fix" : "Result");
+    return '<li class="rung '+cls+'">'+esc(label)+'</li>';
+  }).join("");
+  if(n.res){
+    var tags = {ok:["t-ok","Resolved"],fix:["t-call","Try this"],call:["t-call","Time to call a pro"],stop:["t-stop","Safety first"]}[n.res];
+    h += '<span class="tag '+tags[0]+'">'+tags[1]+'</span><h2>'+esc(n.title)+'</h2><p class="help">'+esc(n.t)+'</p>';
+    if(n.res==="call"||n.res==="fix") h += '<a class="btn" href="'+tel+'">Call '+esc(BUSINESS)+': '+esc(PHONE)+'</a>';
+    if(n.res==="stop") h += '<a class="btn stop" href="tel:911">Call 911</a>';
+    if(n.res==="ok") h += '';
+    h += '<div class="nav"><button class="link" data-back>Go back</button><button class="link" data-restart>Start over</button></div>';
+  } else {
+    h += '<h2>'+esc(n.q)+'</h2>'+(n.h?'<p class="help">'+esc(n.h)+'</p>':'<p class="help"></p>')+'<div class="opts">';
+    n.o.forEach(function(o){ h += '<button class="opt" data-go="'+o[1]+'">'+esc(o[0])+'</button>'; });
+    h += '</div>';
+    if(path.length>1) h += '<div class="nav"><button class="link" data-back>Go back</button><button class="link" data-restart>Start over</button></div>';
+  }
+  el.innerHTML = h;
+  var f = el.querySelector("h2"); if(f){ f.setAttribute("tabindex","-1"); }
+}
+el.addEventListener("click", function(e){
+  var t = e.target.closest("button"); if(!t) return;
+  if(t.dataset.go){ path.push(t.dataset.go); render(); el.scrollIntoView({behavior:"smooth",block:"nearest"}); }
+  else if(t.hasAttribute("data-back")){ if(path.length>1) path.pop(); render(); }
+  else if(t.hasAttribute("data-restart")){ path = ["start"]; render(); }
+});
+render();
+</script>
 </body>
 </html>

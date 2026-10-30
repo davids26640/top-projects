@@ -1,38 +1,133 @@
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+/* ---------- Header ---------- */
 .header {
-display: flex;
-justify-content: space-between;
-background-color: #0b44a0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b44a0;
+    padding: 8px 16px;
 }
 
-.smalllogo { 
-    width: 50px;;
-    height: 50px;;
+.smalllogo {
+    width: 50px;
+    height: 50px;
+    display: block;
 }
 
-.right-links a { 
+.right-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.right-links a {
     text-decoration: none;
-    color: rgb(1, 33, 84);
+    color: #ffffff;
     font-weight: bold;
-    margin-right: 5px;
 }
 
-div .ladder { 
-    text-decoration: none;
-    color: white;
+.right-links a:hover { text-decoration: underline; }
+
+/* Amber matches the troubleshooter page */
+.right-links .header-call {
+    background-color: #E0922B;
+    color: #2A1A02;
+    padding: 8px 14px;
+    border-radius: 6px;
+}
+
+.right-links .header-call:hover { text-decoration: none; background-color: #f0a94a; }
+
+/* ---------- Call button (used in several places) ---------- */
+.call-button {
     display: inline-block;
-    padding: 12px 24px;
-    background-color: #0b44a0; 
+    background-color: #E0922B;
+    color: #2A1A02;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+}
+
+.call-button:hover,
+.call-button:focus { background-color: #f0a94a; }
+
+/* ---------- Hero ---------- */
+.hero {
+    background-color: #f3f6f9;
+    text-align: center;
+    padding: 48px 20px;
+}
+
+.hero h1 {
+    color: #0a2a5e;
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    line-height: 1.2;
+    margin: 0 auto 16px;
+    max-width: 18em;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    margin: 0 auto 24px;
+    max-width: 36em;
+}
+
+.hero .hero-note {
+    font-size: 0.95rem;
+    margin: 16px auto 0;
+    opacity: 0.8;
+}
+
+/* ---------- Troubleshooter band ---------- */
+.main-content {
+    background-color: #0b44a0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     color: white;
-    text-decoration: none;    
+    padding: 24px 16px;
+}
+
+.main-content p { margin: 8px 0 16px; }
+
+.headerlogo {
+    height: 100px;
+    display: flex;
+    align-self: center;
+}
+
+/* White button on the blue band so it's actually visible */
+div .ladder {
+    display: inline-block;
+    align-self: center;
+    padding: 12px 24px;
+    background-color: #ffffff;
+    color: #0b44a0;
+    text-decoration: none;
     border-radius: 6px;
     font-weight: bold;
 }
 
+div .ladder:hover { background-color: #e5e7eb; }
+
+/* ---------- Services ---------- */
 .services { padding: 40px 24px; text-align: center; }
+
+.services h2 { color: #0a2a5e; }
 
 .service-grid {
     display: flex;
-    flex-wrap: wrap;          
+    flex-wrap: wrap;
     justify-content: center;
     gap: 24px;
     max-width: 1100px;
@@ -40,44 +135,71 @@ div .ladder {
 }
 
 .service-card {
-    flex: 1 1 220px;          
-    max-width: 255px;         
+    flex: 1 1 220px;
+    max-width: 255px;
 }
 
 .service-card img { width: 100%; height: auto; border-radius: 8px; }
 .service-card h3 { color: #0a2a5e; margin-top: 12px; }
-.main-content { 
-    background-color: #0b44a0;
+
+/* ---------- Quote band ---------- */
+.flexquote {
     display: flex;
     flex-direction: column;
-    text-align: center;
-    color: white;
-    text-decoration: none;
-}
-.flexquote { 
-    display: flex;
-    color: #1f2937;
     justify-content: center;
-    text-align: center;
     align-items: center;
+    text-align: center;
+    color: #1f2937;
     font-family: Arial, Helvetica, sans-serif;
-    height: 100px;
-    background-color: #E5E7Eb;
-    Font-size: 20px;
+    min-height: 100px;
+    padding: 24px 16px;
+    background-color: #E5E7EB;
+    font-size: 20px;
     font-weight: 300;
     font-style: italic;
 }
 
-.headerlogo { 
-    height: 100px;
-    display: flex;
-    align-self: center;
+.flexquote .quote { margin: 0 auto; max-width: 40em; }
+.flexquote .call-button { margin-top: 16px; font-style: normal; }
+
+/* ---------- Inner pages (About / Contact) ---------- */
+.page {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 40px 20px 56px;
+    line-height: 1.6;
 }
 
-footer { 
+.page h1 { color: #0a2a5e; margin-top: 0; }
+.page h2 { color: #0a2a5e; margin-top: 32px; }
+.page a { color: #0b44a0; }
+.page .call-button { color: #2A1A02; }
+
+.contact-phone {
+    display: inline-block;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    font-weight: bold;
+    text-decoration: none;
+    color: #0b44a0;
+}
+
+/* ---------- Footer ---------- */
+footer {
     display: flex;
-    background-color: #0b44a0;
-    height: 75px;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #0b44a0;
+    color: #ffffff;
+    padding: 24px 16px;
+}
+
+footer p { margin: 4px 0; }
+footer a { color: #ffffff; }
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+    .right-links { gap: 10px; font-size: 0.95rem; }
+    .right-links .header-call { padding: 8px 10px; }
 }

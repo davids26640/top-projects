@@ -3,50 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+
+    <title>Dave's Heating &amp; Cooling | Furnace, Boiler &amp; A/C Repair in Oakland &amp; Wayne Counties, MI</title>
+    <meta name="description" content="Furnace, boiler, A/C and rooftop unit repair in Oakland and Wayne Counties, Michigan. Got a high repair quote? Get an honest second opinion from Dave before you spend the money.">
+
     <link rel="stylesheet" href="styles.css">
 </head>
-<div class="header">
-    <img class="smalllogo" src="./images/logo.png" alt="Company Logo">
-    <div class="right-links">
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact Us</a>
-    </div>
-</div>
 <body>
-    <div class="main-content">
-        <img class="headerlogo" src="./images/header.png" alt="Dave's Heating & Cooling Logo">
-        <a>Having trouble with your furnace? Click the link below for a step by step guide to help figure out what's wrong!</a>
-        <a class="ladder" href="ladder.html">Click Here</a>
-    </div>      
 
-    <section class="services">
-    <h2>What We Work On</h2>
-    <div class="service-grid">
-        <div class="service-card">
-            <img src="./images/boiler.jpg" alt="Boiler">
-            <h3>Boilers</h3>
+    <header class="header">
+        <a href="index.html">
+            <img class="smalllogo" src="./images/logo.png" alt="Dave's Heating &amp; Cooling - home">
+        </a>
+        <nav class="right-links">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact Us</a>
+            <a class="header-call" href="tel:+12486672096">Call (248) 667-2096</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero: lead with the strongest offer -->
+        <section class="hero">
+            <h1>Quoted a big repair? Get a second opinion first.</h1>
+            <p>Before you buy new equipment or spend hundreds on a repair, give Dave a call. Second opinions save money.</p>
+            <a class="call-button" href="tel:+12486672096">Call (248) 667-2096</a>
+            <p class="hero-note">Serving Oakland and Wayne Counties, Michigan</p>
+        </section>
+
+        <!-- Troubleshooter -->
+        <div class="main-content">
+            <img class="headerlogo" src="./images/header.png" alt="Dave's Heating &amp; Cooling logo">
+            <p>Having trouble with your furnace? Follow our step-by-step guide to help figure out what's wrong.</p>
+            <a class="ladder" href="ladder.html">Furnace not working? Start the troubleshooter</a>
         </div>
-        <div class="service-card">
-            <img src="./images/furnace.jpg" alt="Furnace">
-            <h3>Furnaces</h3>
+
+        <section class="services">
+            <h2>What We Work On</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="./images/boiler.jpg" alt="Boiler">
+                    <h3>Boilers</h3>
+                </div>
+                <div class="service-card">
+                    <img src="./images/furnace.jpg" alt="Furnace">
+                    <h3>Furnaces</h3>
+                </div>
+                <div class="service-card">
+                    <img src="./images/ac-condenser.jpg" alt="A/C condenser">
+                    <h3>A/C Condensers</h3>
+                </div>
+                <div class="service-card">
+                    <img src="./images/rooftop-unit.jpg" alt="Commercial rooftop unit">
+                    <h3>Rooftop Units (RTUs)</h3>
+                </div>
+            </div>
+        </section>
+
+        <div class="flexquote">
+            <p class="quote">Get a high repair estimate for your equipment? Second opinions save money. Before you buy new equipment or spend hundreds on a repair, give me a call!</p>
+            <a class="call-button" href="tel:+12486672096">Call (248) 667-2096</a>
         </div>
-        <div class="service-card">
-            <img src="./images/ac-condenser.jpg" alt="A/C condenser">
-            <h3>A/C Condensers</h3>
-        </div>
-        <div class="service-card">
-            <img src="./images/rooftop-unit.jpg" alt="Commercial rooftop unit">
-            <h3>Rooftop Units (RTUs)</h3>
-        </div>
-    </div>
-</section>
-<div class="flexquote">
-    <a class="quote">Get a high repair estimate for your equipment? Second opinions save money. Before you buy new equipment or spend hundreds on a repair, give me a call!  </a>
-</div> 
-<footer>
-    <a>Copyright @ Dave's Heating & Cooling</a>
-</footer>
+    </main>
+
+    <footer>
+        <p>Dave's Heating &amp; Cooling</p>
+        <p>Phone: <a href="tel:+12486672096">(248) 667-2096</a></p>
+        <!-- TODO: add hours and license number if you have one -->
+        <p>Serving Oakland and Wayne Counties, Michigan</p>
+        <p>&copy; Dave's Heating &amp; Cooling</p>
+    </footer>
 
 </body>
 </html>

@@ -50,6 +50,12 @@ h1{font-size:clamp(26px,6vw,36px);font-weight:700}
 .home{display:inline-block;font:600 15px/1.2 Figtree,system-ui,sans-serif;color:var(--ink);text-decoration:none;background:var(--card);border:2px solid var(--line);border-radius:10px;padding:11px 16px;margin-bottom:18px}
 .home:hover{border-color:var(--accent)}
 .home:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+/* text me callout */
+.textme{display:block;margin-top:16px;padding:14px 16px;border-radius:12px;border:2px solid var(--accent);border-left-width:6px;background:var(--card);color:var(--ink);text-decoration:none}
+.textme:hover{background:var(--bg)}
+.textme:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.textme strong{display:block;font:700 17px/1.3 "Bricolage Grotesque",Figtree,system-ui,sans-serif}
+.textme span{color:var(--mute);font-size:15px}
 </style>
 </head>
 <body>
@@ -60,6 +66,7 @@ h1{font-size:clamp(26px,6vw,36px);font-weight:700}
   <div class="layout">
     <nav class="ladder" aria-label="Your progress"><div class="ladder-inner"><ol id="rungs"></ol></div></nav>
     <main><div class="card" id="card" aria-live="polite"></div>
+    <a class="textme" href="sms:+12486672096"><strong>Stuck on a step? Text me.</strong><span>(248) 667-2096. I'm happy to help you fix it yourself.</span></a>
     <p class="small">Never open the burner compartment, touch wiring, or work on gas lines. If a step feels unsafe, skip it and call us.</p></main>
   </div>
 </div>

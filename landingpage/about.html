@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Dave's Heating &amp; Cooling</title>
-    <meta name="description" content="About Dave's Heating &amp; Cooling: boiler, furnace, A/C and rooftop unit service, and honest second opinions on repair estimates.">
+    <meta name="description" content="About Dave's Heating &amp; Cooling: furnace, A/C and rooftop unit service, and honest second opinions on repair estimates.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dave's Heating &amp; Cooling">
     <meta property="og:title" content="About | Dave's Heating &amp; Cooling">
-    <meta property="og:description" content="Boiler, furnace, A/C and rooftop unit service, plus honest second opinions on repair estimates.">
+    <meta property="og:description" content="Furnace, A/C and rooftop unit service, plus honest second opinions on repair estimates.">
     <meta property="og:url" content="https://davids26640.github.io/top-projects/about.html">
     <meta property="og:image" content="https://davids26640.github.io/top-projects/images/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -17,6 +17,8 @@
     <meta name="twitter:card" content="summary">
 
     <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -31,35 +33,70 @@
         </nav>
     </header>
 
-    <main class="page">
-        <h1>About Dave's Heating &amp; Cooling</h1>
+    <main class="inner-main">
+        <section class="page-hero">
+            <div class="page-hero-in">
+                <span class="eyebrow">About</span>
+                <h1>About Dave's Heating &amp; Cooling</h1>
+                <p>I work on furnaces, A/C condensers, and commercial rooftop units (RTUs).</p>
+            </div>
+        </section>
 
-        <p>I work on boilers, furnaces, A/C condensers, and commercial rooftop units (RTUs).</p>
+        <div class="two-col">
+            <div class="card reveal">
+                <p>Dave's Heating &amp; Cooling, LLC has served Oakland and Wayne Counties since 2024.</p>
 
-        <p>Dave's Heating &amp; Cooling, LLC has served Oakland and Wayne Counties since 2024.</p>
+                <p>Many customers reach out to me after they've been handed a big repair estimate and aren't sure it's right. If that's you, I'm happy to take a look and give you an honest second opinion before you spend money on a repair or a replacement.</p>
 
-        <p>Many customers reach out to me after they've been handed a big repair estimate and aren't sure it's right. If that's you, I'm happy to take a look and give you a honest second opinion before you spend money on a repair or a replacement.</p>
+                <!--
+                    TODO (recommended): add a few lines about yourself here. Customers trust
+                    HVAC companies more when they can see:
+                      - your license and insurance info
+                      - any manufacturer certifications
+                      - a photo of you or your truck
+                -->
 
-        <!--
-            TODO (recommended): add a few lines about yourself here. Customers trust
-            HVAC companies more when they can see:
-              - your license and insurance info
-              - any manufacturer certifications
-              - a photo of you or your truck
-        -->
+                <h2>Not sure if you need a technician?</h2>
+                <p>Try the <a href="ladder.html">furnace troubleshooter</a>. It walks you through a few quick checks that fix a lot of no-heat calls.</p>
 
-        <h2>Not sure if you need a technician?</h2>
-        <p>Try the <a href="ladder.html">furnace troubleshooter</a>. It walks you through a few quick checks that fix a lot of no-heat calls.</p>
+                <p><a class="call-button pulse" href="tel:+12486672096">Call (248) 667-2096</a></p>
+            </div>
 
-        <p><a class="call-button" href="tel:+12486672096">Call (248) 667-2096</a></p>
+            <aside class="card reveal" style="--d:.1s">
+                <h2>Quick facts</h2>
+                <ul class="facts">
+                    <li><b>Works on</b>Furnaces, A/C condensers and rooftop units (RTUs)</li>
+                    <li><b>Service area</b>Oakland and Wayne Counties, Michigan</li>
+                    <li><b>Serving since</b>2024</li>
+                    <li><b>Phone</b><a href="tel:+12486672096">(248) 667-2096</a></li>
+                </ul>
+            </aside>
+        </div>
     </main>
 
-    <footer>
-        <p>Dave's Heating &amp; Cooling</p>
-        <p>Phone: <a href="tel:+12486672096">(248) 667-2096</a></p>
-        <!-- TODO: add hours and license number if you have one -->
-        <p>Serving Oakland and Wayne Counties, Michigan</p>
-        <p>&copy; 2026 Dave's Heating &amp; Cooling, LLC</p>
+    <footer class="site-footer">
+        <div class="foot-grid">
+            <div class="foot-brand">
+                <div class="brandline"><img src="./images/logo.png" alt="">Dave's Heating &amp; Cooling</div>
+                <p><a href="https://davescreations.app" target="_blank" rel="noopener">Dave's Creations LLC</a><br>Apps for iPhone, iPad and the web.</p>
+            </div>
+            <div class="foot-col">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="ladder.html">Furnace Troubleshooter</a>
+                <a href="scheduler.html">Schedule Service</a>
+            </div>
+            <div class="foot-col">
+                <h4>Contact</h4>
+                <a class="foot-phone" href="tel:+12486672096">(248) 667-2096</a>
+                <a href="sms:+12486672096">Text me a question</a>
+                <!-- TODO: add hours and license number if you have one -->
+                <span>Serving Oakland and Wayne Counties, Michigan</span>
+            </div>
+        </div>
+        <div class="foot-bottom">&copy; 2026 Dave's Heating &amp; Cooling, LLC</div>
     </footer>
 
 </body>

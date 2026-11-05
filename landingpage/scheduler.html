@@ -9,7 +9,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dave's Heating &amp; Cooling">
     <meta property="og:title" content="Schedule Service | Dave's Heating &amp; Cooling">
-    <meta property="og:description" content="Furnace, boiler, A/C and rooftop unit service in Oakland and Wayne Counties, Michigan.">
+    <meta property="og:description" content="Furnace, A/C and rooftop unit service in Oakland and Wayne Counties, Michigan.">
     <meta property="og:url" content="https://davids26640.github.io/top-projects/scheduler.html">
     <meta property="og:image" content="https://davids26640.github.io/top-projects/images/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -18,6 +18,8 @@
     <meta name="twitter:card" content="summary">
 
     <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -32,22 +34,54 @@
         </nav>
     </header>
 
-    <main class="page">
-        <h1>Schedule Service</h1>
+    <main class="inner-main">
+        <section class="page-hero">
+            <div class="page-hero-in">
+                <span class="eyebrow">Schedule</span>
+                <h1>Schedule Service</h1>
+                <p>Online scheduling is coming soon.</p>
+            </div>
+        </section>
 
-        <p>Online scheduling is coming soon.</p>
-
-        <p>Need service in the meantime? Give me a call at <a href="tel:+12486672096">(248) 667-2096</a>.</p>
-
-        <p><a class="call-button" href="index.html">Back to Homepage</a></p>
+        <div class="soon">
+            <div class="card reveal">
+                <div class="soon-ic" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="M8.5 14.5l2.2 2.2 4.3-4.4"/></svg>
+                </div>
+                <h2>Need service in the meantime?</h2>
+                <p>Give me a call at <a href="tel:+12486672096">(248) 667-2096</a>.</p>
+                <p>Have a question? You can also <a href="sms:+12486672096">text me</a>. I'm happy to help you fix it yourself.</p>
+                <div class="btns">
+                    <a class="call-button pulse" href="tel:+12486672096">Call (248) 667-2096</a>
+                    <a class="ghost-button" href="index.html">Back to Homepage</a>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>Dave's Heating &amp; Cooling</p>
-        <p>Phone: <a href="tel:+12486672096">(248) 667-2096</a></p>
-        <!-- TODO: add hours and license number if you have one -->
-        <p>Serving Oakland and Wayne Counties, Michigan</p>
-        <p>&copy; 2026 Dave's Heating &amp; Cooling, LLC</p>
+    <footer class="site-footer">
+        <div class="foot-grid">
+            <div class="foot-brand">
+                <div class="brandline"><img src="./images/logo.png" alt="">Dave's Heating &amp; Cooling</div>
+                <p><a href="https://davescreations.app" target="_blank" rel="noopener">Dave's Creations LLC</a><br>Apps for iPhone, iPad and the web.</p>
+            </div>
+            <div class="foot-col">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="ladder.html">Furnace Troubleshooter</a>
+                <a href="scheduler.html">Schedule Service</a>
+            </div>
+            <div class="foot-col">
+                <h4>Contact</h4>
+                <a class="foot-phone" href="tel:+12486672096">(248) 667-2096</a>
+                <a href="sms:+12486672096">Text me a question</a>
+                <!-- TODO: add hours and license number if you have one -->
+                <span>Serving Oakland and Wayne Counties, Michigan</span>
+            </div>
+        </div>
+        <div class="foot-bottom">&copy; 2026 Dave's Heating &amp; Cooling, LLC</div>
     </footer>
 
 </body>

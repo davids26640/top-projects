@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Dave's Heating &amp; Cooling</title>
-    <meta name="description" content="Call Dave's Heating &amp; Cooling at (248) 667-2096 for furnace, boiler, A/C and rooftop unit service, or a second opinion on a repair estimate.">
+    <meta name="description" content="Call Dave's Heating &amp; Cooling at (248) 667-2096 for furnace, A/C and rooftop unit service, or a second opinion on a repair estimate.">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Dave's Heating &amp; Cooling">
     <meta property="og:title" content="Contact Us | Dave's Heating &amp; Cooling">
-    <meta property="og:description" content="Call (248) 667-2096 for furnace, boiler, A/C and rooftop unit service, or a second opinion on a repair estimate.">
+    <meta property="og:description" content="Call (248) 667-2096 for furnace, A/C and rooftop unit service, or a second opinion on a repair estimate.">
     <meta property="og:url" content="https://davids26640.github.io/top-projects/contact.html">
     <meta property="og:image" content="https://davids26640.github.io/top-projects/images/og-image.png">
     <meta property="og:image:width" content="1200">
@@ -17,6 +17,8 @@
     <meta name="twitter:card" content="summary">
 
     <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
@@ -31,15 +33,36 @@
         </nav>
     </header>
 
-    <main class="page">
-        <h1>Contact Us</h1>
+    <main class="inner-main">
+        <section class="page-hero">
+            <div class="page-hero-in">
+                <span class="eyebrow">Contact</span>
+                <h1>Contact Us</h1>
+                <p>The fastest way to reach me is to call. Got a repair estimate you're unsure about? Call before you spend the money.</p>
+            </div>
+        </section>
 
-        <p>The fastest way to reach me is to call. Got a repair estimate you're unsure about? Call before you spend the money.</p>
+        <div class="cards-3">
+            <div class="card reveal">
+                <h2>Call or text</h2>
+                <a class="contact-phone" href="tel:+12486672096">(248) 667-2096</a>
+                <p>Have a question? Text me. I'm happy to help you fix it yourself.</p>
+                <div class="btn-row">
+                    <a class="call-button" href="tel:+12486672096">Call now</a>
+                    <a class="ghost-button" href="sms:+12486672096">Text me</a>
+                </div>
+            </div>
 
-        <p><a class="contact-phone" href="tel:+12486672096">(248) 667-2096</a></p>
+            <div class="card reveal" style="--d:.08s">
+                <h2>Service area</h2>
+                <p>Serving Oakland and Wayne Counties in Michigan. Call to confirm we cover your location.</p>
+            </div>
 
-        <h2>Service area</h2>
-        <p>Serving Oakland and Wayne Counties in Michigan. Call to confirm we cover your location.</p>
+            <div class="card reveal" style="--d:.16s">
+                <h2>Before you call</h2>
+                <p>If your furnace isn't working, our <a href="ladder.html">troubleshooter</a> can help you check the simple stuff first.</p>
+            </div>
+        </div>
 
         <!--
             TODO (optional, add what applies):
@@ -54,16 +77,37 @@
             by itself (Formspree and Getform have free plans). Ask me if you want one added.
         -->
 
-        <h2>Before you call</h2>
-        <p>If your furnace isn't working, our <a href="ladder.html">troubleshooter</a> can help you check the simple stuff first. If you smell gas, leave your house, call 911 and your gas utility.</p>
+        <div class="cards-3" style="grid-template-columns:1fr">
+            <div class="card callout reveal">
+                <h2>Smell gas?</h2>
+                <p>If you smell gas, leave your house, call 911 and your gas utility.</p>
+            </div>
+        </div>
     </main>
 
-    <footer>
-        <p>Dave's Heating &amp; Cooling</p>
-        <p>Phone: <a href="tel:+12486672096">(248) 667-2096</a></p>
-        <!-- TODO: add hours and license number if you have one -->
-        <p>Serving Oakland and Wayne Counties, Michigan</p>
-        <p>&copy; 2026 Dave's Heating &amp; Cooling, LLC</p>
+    <footer class="site-footer">
+        <div class="foot-grid">
+            <div class="foot-brand">
+                <div class="brandline"><img src="./images/logo.png" alt="">Dave's Heating &amp; Cooling</div>
+                <p><a href="https://davescreations.app" target="_blank" rel="noopener">Dave's Creations LLC</a><br>Apps for iPhone, iPad and the web.</p>
+            </div>
+            <div class="foot-col">
+                <h4>Explore</h4>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact Us</a>
+                <a href="ladder.html">Furnace Troubleshooter</a>
+                <a href="scheduler.html">Schedule Service</a>
+            </div>
+            <div class="foot-col">
+                <h4>Contact</h4>
+                <a class="foot-phone" href="tel:+12486672096">(248) 667-2096</a>
+                <a href="sms:+12486672096">Text me a question</a>
+                <!-- TODO: add hours and license number if you have one -->
+                <span>Serving Oakland and Wayne Counties, Michigan</span>
+            </div>
+        </div>
+        <div class="foot-bottom">&copy; 2026 Dave's Heating &amp; Cooling, LLC</div>
     </footer>
 
 </body>

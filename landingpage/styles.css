@@ -262,6 +262,20 @@ img { max-width: 100%; }
 .flake.k2 { left: 36%; animation-delay: 1.4s; width: 3px; height: 3px; }
 .flake.k3 { left: 64%; animation-delay: 2.6s; }
 .flake.k4 { left: 86%; animation-delay: 3.7s; width: 3px; height: 3px; }
+/* ---------- Trust strip ---------- */
+.trust { position: relative; z-index: 2; max-width: 1100px; margin: -44px auto 0; padding: 0 20px; }
+.trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: var(--shadow-s);
+    transition: transform .25s var(--ease), box-shadow .25s;
+}
 .trust-item:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .trust-ic {
     flex: 0 0 44px;

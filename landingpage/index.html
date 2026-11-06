@@ -63,17 +63,41 @@
                 <div class="hero-visual" aria-hidden="true">
                     <div class="hv">
                         <div class="hv-panel">
+                            <div class="hv-pair">
                             <div class="hv-half warm">
-                                <svg viewBox="0 0 24 24"><path d="M12 2.8c.7 3.3-2.1 5-3.6 7.4C7.2 12 7 13.2 7 14.2a5 5 0 0 0 10 0c0-2.2-1.1-3.9-2.2-5.1-.3 1.4-1 2.3-1.9 2.6.5-3.2-.1-7.1-.9-8.9z"/></svg>
-                                <span>Heating</span>
+                                <div class="fire">
+                                    <span class="glow"></span>
+                                    <svg viewBox="0 0 100 140" class="flame-svg">
+                                        <defs>
+                                            <linearGradient id="fo" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#d7260f"/><stop offset=".55" stop-color="#ff5a1f"/><stop offset="1" stop-color="#ff9a2e"/></linearGradient>
+                                            <linearGradient id="fm" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff8a1f"/><stop offset="1" stop-color="#ffd23f"/></linearGradient>
+                                            <linearGradient id="fc" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff2a8"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+                                        </defs>
+                                        <path class="f1" fill="url(#fo)" d="M50 2C55 24 84 46 84 90C84 118 69 137 50 137C31 137 16 118 16 90C16 70 27 58 33 42C36 52 41 56 45 57C42 38 45 18 50 2Z"/>
+                                        <path class="f2" fill="url(#fm)" d="M50 36C54 54 72 68 72 99C72 119 62 134 50 134C38 134 28 119 28 99C28 82 38 72 43 58C45 65 48 68 51 69C48 58 48 46 50 36Z"/>
+                                        <path class="f3" fill="url(#fc)" d="M50 80C54 92 62 100 62 113C62 126 56 134 50 134C44 134 38 126 38 113C38 100 46 92 50 80Z"/>
+                                    </svg>
+                                    <i class="ember e1"></i><i class="ember e2"></i><i class="ember e3"></i><i class="ember e4"></i>
+                                </div>
                             </div>
                             <div class="hv-half cool">
-                                <svg viewBox="0 0 24 24">
-                                    <g><path d="M12 2.5v19"/><path d="M9.6 4.8 12 6.9l2.4-2.1"/><path d="M9.6 19.2 12 17.1l2.4 2.1"/></g>
-                                    <g transform="rotate(60 12 12)"><path d="M12 2.5v19"/><path d="M9.6 4.8 12 6.9l2.4-2.1"/><path d="M9.6 19.2 12 17.1l2.4 2.1"/></g>
-                                    <g transform="rotate(120 12 12)"><path d="M12 2.5v19"/><path d="M9.6 4.8 12 6.9l2.4-2.1"/><path d="M9.6 19.2 12 17.1l2.4 2.1"/></g>
-                                </svg>
-                                <span>Cooling</span>
+                                <div class="ice">
+                                    <span class="frost"></span>
+                                    <svg viewBox="0 0 120 120" class="snow-svg">
+                                        <defs>
+                                            <linearGradient id="ig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5ec2ff"/><stop offset="1" stop-color="#0b44a0"/></linearGradient>
+                                            <g id="arm"><path d="M60 60V8M60 40L47 28M60 40L73 28M60 26L51 17M60 26L69 17"/></g>
+                                        </defs>
+                                        <g fill="none" stroke="url(#ig)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+                                            <use href="#arm"/><use href="#arm" transform="rotate(60 60 60)"/><use href="#arm" transform="rotate(120 60 60)"/>
+                                            <use href="#arm" transform="rotate(180 60 60)"/><use href="#arm" transform="rotate(240 60 60)"/><use href="#arm" transform="rotate(300 60 60)"/>
+                                            <path d="M60 52L66.9 56V64L60 68L53.1 64V56Z" stroke-width="2.4"/>
+                                        </g>
+                                    </svg>
+                                    <i class="twinkle t1"></i><i class="twinkle t2"></i><i class="twinkle t3"></i>
+                                    <i class="flake k1"></i><i class="flake k2"></i><i class="flake k3"></i><i class="flake k4"></i>
+                                </div>
+                            </div>
                             </div>
                         </div>                    </div>
                 </div>
